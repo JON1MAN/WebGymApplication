@@ -19,9 +19,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @AllArgsConstructor
 @RestController
 public class AppController {
@@ -30,13 +32,19 @@ public class AppController {
     private final JwtService jwtService;
     private final AuthenticationService authenticationService;
 
+
+    @GetMapping("/messages")
+    public ResponseEntity<List<String>> messages(){
+        return ResponseEntity.ok(Arrays.asList("first", "second"));
+    }
+
     @GetMapping("/users")
     public ResponseEntity<List<User>> showUsers(){
         List<User> users = userService.showAllUsers();
         System.out.println("Retrieved users: " + users);
-        if(users.isEmpty()){
-            return ResponseEntity.noContent().build(); // No users found
-        }
+//        if(users.isEmpty()){
+//            return ResponseEntity.noContent().build(); // No users found
+//        }
         return ResponseEntity.ok(users);
     }
 
