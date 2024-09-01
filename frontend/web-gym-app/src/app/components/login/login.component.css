@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  height: 100vh;
+  background-image: url('gym_background_regist_login.jpg'); /* Update this with the correct path to your image */
+  background-size: cover;
+  background-position: center;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+p-card{
+  width: 360px;
+  opacity: 0.9;
+}

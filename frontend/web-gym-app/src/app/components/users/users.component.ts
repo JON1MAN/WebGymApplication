@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
-import { AxiosService } from '../../axios.service';
 import { User } from '../../interfaces/user';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgFor } from '@angular/common';

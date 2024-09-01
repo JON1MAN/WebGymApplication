@@ -1,0 +1,56 @@
+<p>buymembership works!</p>
+<div class="login-container">
+    <form [formGroup]="buyForm" (ngSubmit)="onSubmit()">
+        <p-card header="Buy membership">
+          <div class="field">
+            <label for="method">Payment method</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="method"
+              class="w-full"
+              name="method"
+              placeholder="Enter payment method"
+            />
+          </div>
+      
+          <div class="field">
+            <label for="amount">Amount</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="amount"
+              class="w-full"
+              name="amount"
+              placeholder="Amount"
+            />
+          </div>
+
+          <div class="field">
+            <label for="currency">Currency</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="currency"
+              class="w-full"
+              name="currency"
+              placeholder="Currency"
+            />
+          </div>
+
+          <div class="field">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="description"
+              class="w-full"
+              name="description"
+              placeholder="Description"
+            />
+          </div>
+
+          <p-button label="Buy" styleClass="w-full" type="submit"></p-button>
+        </p-card>
+    </form>
+</div>

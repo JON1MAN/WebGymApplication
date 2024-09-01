@@ -14,6 +14,7 @@ export class UserService {
   private apiServerUrl  = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
+  static loggedUser: User;
 
   public getAllUsers(): Observable<User[]>{
     return this.http.get<User[]>(`${this.apiServerUrl}/users`);
@@ -24,6 +25,12 @@ export class UserService {
   }
 
   public loginUser(user: UserLoginDto): Observable<LoginResponse>{
+    // UserService.loggedUser.email = user.email;
     return this.http.post<LoginResponse>(`${this.apiServerUrl}/login`, user);
+  }
+  
+
+  public static getLoggedInUserEmail(): string {
+    return UserService.loggedUser ? UserService.loggedUser.email : '';
   }
 }

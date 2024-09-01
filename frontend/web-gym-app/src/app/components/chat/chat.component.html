@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+	
+	<div class="container">
+		<nav>
+			<a href="http://localhost:4200/home">Home</a>
+			<a href="http://localhost:4200/chats">Chats</a>
+			<a href="http://localhost:4200/logout">Membership</a>
+			<a href="http://localhost:4200/login">Sign In</a>
+			<a href="http://localhost:4200/register">Sign Up</a>
+			<div class="animation start-home"></div>
+		</nav>
+		<div class="row clearfix">
+			<div class="col-lg-12">
+				<div class="card chat-app">
+					<div id="plist" class="people-list">
+						<ul *ngFor="let user of users"class="list-unstyled chat-list mt-2 mb-0">
+							<li class="clearfix">
+								<img src="https://nypost.com/wp-content/uploads/sites/2/2013/08/bryan_cranston-300x300.jpg?quality=75&strip=all" alt="avatar">
+								<div class="about">
+									<div class="name">{{user?.firstname}} {{user?.lastname}}</div>                                           
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="chat">
+						<div class="chat-header clearfix">
+							<div class="row">
+								<div class="col-lg-6">
+									<a href="javascript:void(0);" data-toggle="modal" data-target="#view_info">
+										<img src="https://techsetter.pl/wp-content/uploads/2018/11/techsetter_film-breaking-bad-update-300x300.jpg" alt="avatar">
+									</a>
+									<div class="chat-about">
+										<h6 class="m-b-0">John Mayer</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="chat-history">
+							<ul class="m-b-0">
+								<li class="clearfix">
+									<div class="message-data text-right">
+										<span class="message-data-time">10:10 AM</span>
+									</div>
+									<div class="message other-message float-right"> Hi John, how are you? How is the project coming along? </div>
+								</li>
+								<li class="clearfix">
+									<div class="message-data">
+										<span class="message-data-time">10:12 AM, Today</span>
+									</div>
+									<div class="message my-message">Are we meeting today?</div>                                    
+								</li>                               
+							</ul>
+						</div>
+						<div class="chat-message clearfix">
+							<div class="input-group mb-0">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><i class="fa fa-send"></i></span>
+								</div>
+								<input type="text" class="form-control" placeholder="Enter text here...">                                    
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+</body>
+</html>

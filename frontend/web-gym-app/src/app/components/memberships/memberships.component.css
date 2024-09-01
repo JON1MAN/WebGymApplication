@@ -1,0 +1,91 @@
+
+:host {
+    display: block;
+    height: 100vh;
+    background-image: url('https://i.pinimg.com/originals/dc/00/65/dc00658fa7349235fbe6075b55441fea.jpg'); /* Update this with the correct path to your image */
+    background-size: cover;
+    background-position: center;
+  }
+
+  nav {
+    margin: 0px auto 0;
+  
+    position:relative;
+    width: 100px;
+    height: 50px;
+    background-color: #e3e8eb;
+    border-radius: 8px;
+    font-size: 0;
+    opacity: 0.8;
+  }
+  nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(91, 83, 83);
+    cursor: pointer;
+  }
+  nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all .5s ease 0s;
+    border-radius: 8px;
+  }
+  a:nth-child(1) {
+    width: 100px;
+  }
+
+  nav .start-home, a:nth-child(1):hover~.animation {
+    width: 100px;
+    left: 0;
+    background-color: #ffffff;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between; /* Space between cards */
+    align-items: flex-start; /* Align items to the top of the container */
+    flex-wrap: wrap; /* Allow cards to wrap onto multiple lines if necessary */
+    gap: 20px; /* Adjust the gap between cards */
+    padding: 20px; /* Add padding to the container */
+    box-sizing: border-box; /* Ensure padding does not affect total width */
+    
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }

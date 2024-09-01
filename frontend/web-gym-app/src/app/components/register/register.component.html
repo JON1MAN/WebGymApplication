@@ -1,1 +1,94 @@
-<p>register works!</p>
+<div class="register-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <p-card header="Register">
+
+            <div class="field">
+                <label for="firstname">First name</label>
+                <input
+                  type="text"
+                  pInputText
+                  formControlName="firstname"
+                  class="w-full"
+                  name="firstname"
+                  placeholder="Enter your first Name"
+                />
+                <small *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="p-error">
+                  <div *ngIf="firstname.errors?.['required']">Name is required</div>
+                  <div *ngIf="firstname.errors?.['pattern']">Please enter a valid name</div>
+                </small>
+              </div>
+
+          <div class="field">
+            <label for="lastname">Last name</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="lastname"
+              class="w-full"
+              name="lastname"
+              placeholder="Enter your last name"
+            />
+            <small *ngIf="lastname?.invalid && (lastname.dirty || lastname.touched)" class="p-error">
+              <div *ngIf="lastname.errors?.['required']">Last name is required</div>
+              <div *ngIf="lastname.errors?.['pattern']">Please enter a valid last name</div>
+            </small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              pInputText
+              formControlName="email"
+              class="w-full"
+              name="email"
+              placeholder="Enter your email"
+            />
+            <small *ngIf="email?.invalid && (email.dirty || email.touched)" class="p-error">
+              <div *ngIf="email.errors?.['required']">Email is required</div>
+              <div *ngIf="email.errors?.['email']">Please enter a valid email address</div>
+            </small>
+          </div>
+      
+          <div class="field">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              pInputText
+              formControlName="password"
+              class="w-full"
+              name="password"
+              placeholder="Enter your password"
+            />
+            <small *ngIf="password?.invalid && (password.dirty || password.touched)" class="p-error">
+              <div *ngIf="password.errors?.['required']">Password is required</div>
+            </small>
+          </div>
+
+          <div class="field">
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              type="password"
+              pInputText
+              formControlName="confirmPassword"
+              class="w-full"
+              name="confirmPassword"
+              placeholder="Confirm password"
+            />
+            <small *ngIf="confirmPassword?.invalid && (confirmPassword.dirty || confirmPassword.touched)" class="p-error">
+              <div >Confirm the password</div>
+            </small>
+            <small *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid"  class="p-error">
+                    Password should match
+              </small>
+          </div>
+          <p-button label="Sign up" styleClass="w-full" [disabled]="registerForm.invalid" type="submit">
+            
+          </p-button>
+          <div class="mt-2">
+            Already a member? <a routerLink="/login">Login</a>
+          </div>
+        </p-card>
+      </form>
+</div>
+    
